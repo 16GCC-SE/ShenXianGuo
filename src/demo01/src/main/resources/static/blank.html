@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<header class="app-header navbar" >
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+        <img class="navbar-brand-full" src="科一考试中心.png" width="40" height="40" >
+        <strong>科一在线考试</strong>
+    </a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="nav-link" href="#">考试</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="#">用户</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="#">知识</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="#">错题</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="#">论坛</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="#">VIP</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-bell"></i>
+                <span class="badge badge-pill badge-danger">5</span>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-list"></i>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-location-pin"></i>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-bell-o"></i> Updates
+                    <span class="badge badge-info">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-envelope-o"></i> Messages
+                    <span class="badge badge-success">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-tasks"></i> Tasks
+                    <span class="badge badge-danger">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-comments"></i> Comments
+                    <span class="badge badge-warning">42</span>
+                </a>
+                <div class="dropdown-header text-center">
+                    <strong>Settings</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-wrench"></i> Settings</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-usd"></i> Payments
+                    <span class="badge badge-secondary">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-file"></i> Projects
+                    <span class="badge badge-primary">42</span>
+                </a>
+                <div class="divider"></div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-shield"></i> Lock Account</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show" >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+<div class="app-body">
+    <div class="col-sm-3 " >
+        <div class="card">
+            <div class="card-header">
+                <strong class="h3">科目一</strong>
+                <small class="h5">题数</small>
+                <div class="card-header-actions">
+                        <h5 class="text-muted" >100/100</h5>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row ">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt1" type="button" aria-pressed="true" onclick="tijiao(1)">1</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt2" type="button" aria-pressed="true" onclick="tijiao(2)">2</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt3" type="button" aria-pressed="true" onclick="tijiao(3)">3</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt4" type="button" aria-pressed="true" onclick="tijiao(4)">4</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt5" type="button" aria-pressed="true" onclick="tijiao(5)">5</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt6" type="button" aria-pressed="true" onclick="tijiao(6)">6</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt7" type="button" aria-pressed="true" onclick="tijiao(7)">7</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt8" type="button" aria-pressed="true" onclick="tijiao(8)">8</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt9" type="button" aria-pressed="true" onclick="tijiao(9)">9</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt10" type="button" aria-pressed="true" onclick="tijiao(10)">10</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt11" type="button" aria-pressed="true" onclick="tijiao(11)">11</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt12" type="button" aria-pressed="true" onclick="tijiao(12)">12</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt13" type="button" aria-pressed="true" onclick="tijiao(13)">13</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt14" type="button" aria-pressed="true" onclick="tijiao(14)">14</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt15" type="button" aria-pressed="true" onclick="tijiao(15)">15</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt16" type="button" aria-pressed="true" onclick="tijiao(16)">16</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt17" type="button" aria-pressed="true" onclick="tijiao(17)">17</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt18" type="button" aria-pressed="true" onclick="tijiao(18)">18</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt19" type="button" aria-pressed="true" onclick="tijiao(19)">19</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt20" type="button" aria-pressed="true" onclick="tijiao(20)">20</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt21" type="button" aria-pressed="true" onclick="tijiao(21)">21</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt22" type="button" aria-pressed="true" onclick="tijiao(22)">22</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt23" type="button" aria-pressed="true" onclick="tijiao(23)">23</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt24" type="button" aria-pressed="true" onclick="tijiao(24)">24</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt25" type="button" aria-pressed="true" onclick="tijiao(25)">25</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt26" type="button" aria-pressed="true" onclick="tijiao(26)">26</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt27" type="button" aria-pressed="true" onclick="tijiao(27)">27</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt28" type="button" aria-pressed="true" onclick="tijiao(28)">28</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt29" type="button" aria-pressed="true" onclick="tijiao(29)">29</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt30" type="button" aria-pressed="true" onclick="tijiao(30)">30</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt31" type="button" aria-pressed="true" onclick="tijiao(31)">31</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt32" type="button" aria-pressed="true" onclick="tijiao(32)">32</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt33" type="button" aria-pressed="true" onclick="tijiao(33)">33</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt34" type="button" aria-pressed="true" onclick="tijiao(34)">34</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt35" type="button" aria-pressed="true" onclick="tijiao(35)">35</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt36" type="button" aria-pressed="true" onclick="tijiao(36)">36</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt37" type="button" aria-pressed="true" onclick="tijiao(37)">37</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt38" type="button" aria-pressed="true" onclick="tijiao(38)">38</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt39" type="button" aria-pressed="true" onclick="tijiao(39)">39</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt40" type="button" aria-pressed="true" onclick="tijiao(40)">40</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt41" type="button" aria-pressed="true" onclick="tijiao(41)">41</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt42" type="button" aria-pressed="true" onclick="tijiao(42)">42</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt43" type="button" aria-pressed="true" onclick="tijiao(43)">43</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt44" type="button" aria-pressed="true" onclick="tijiao(44)">44</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt45" type="button" aria-pressed="true" onclick="tijiao(45)">45</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt46" type="button" aria-pressed="true" onclick="tijiao(46)">46</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt47" type="button" aria-pressed="true" onclick="tijiao(47)">47</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt48" type="button" aria-pressed="true" onclick="tijiao(48)">48</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt49" type="button" aria-pressed="true" onclick="tijiao(49)">49</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt50" type="button" aria-pressed="true" onclick="tijiao(50)">50</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt51" type="button" aria-pressed="true" onclick="tijiao(51)">51</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt52" type="button" aria-pressed="true" onclick="tijiao(52)">52</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt53" type="button" aria-pressed="true" onclick="tijiao(53)">53</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt54" type="button" aria-pressed="true" onclick="tijiao(54)">54</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt55" type="button" aria-pressed="true" onclick="tijiao(55)">55</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt56" type="button" aria-pressed="true" onclick="tijiao(56)">56</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt57" type="button" aria-pressed="true" onclick="tijiao(57)">57</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt58" type="button" aria-pressed="true" onclick="tijiao(58)">58</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt59" type="button" aria-pressed="true" onclick="tijiao(59)">59</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt60" type="button" aria-pressed="true" onclick="tijiao(60)">60</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt61" type="button" aria-pressed="true" onclick="tijiao(61)">61</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt62" type="button" aria-pressed="true" onclick="tijiao(62)">62</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt63" type="button" aria-pressed="true" onclick="tijiao(63)">63</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt64" type="button" aria-pressed="true" onclick="tijiao(64)">64</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt65" type="button" aria-pressed="true" onclick="tijiao(65)">65</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt66" type="button" aria-pressed="true" onclick="tijiao(66)">66</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt67" type="button" aria-pressed="true" onclick="tijiao(67)">67</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt68" type="button" aria-pressed="true" onclick="tijiao(68)">68</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt69" type="button" aria-pressed="true" onclick="tijiao(69)">69</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt70" type="button" aria-pressed="true" onclick="tijiao(70)">70</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt71" type="button" aria-pressed="true" onclick="tijiao(71)">71</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt72" type="button" aria-pressed="true" onclick="tijiao(72)">72</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt73" type="button" aria-pressed="true" onclick="tijiao(73)">73</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt74" type="button" aria-pressed="true" onclick="tijiao(74)">74</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt75" type="button" aria-pressed="true" onclick="tijiao(75)">75</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt76" type="button" aria-pressed="true" onclick="tijiao(76)">76</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt77" type="button" aria-pressed="true" onclick="tijiao(77)">77</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt78" type="button" aria-pressed="true" onclick="tijiao(78)">78</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt79" type="button" aria-pressed="true" onclick="tijiao(79)">79</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt80" type="button" aria-pressed="true" onclick="tijiao(80)">80</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt81" type="button" aria-pressed="true" onclick="tijiao(81)">81</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt82" type="button" aria-pressed="true" onclick="tijiao(82)">82</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt83" type="button" aria-pressed="true" onclick="tijiao(83)">83</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt84" type="button" aria-pressed="true" onclick="tijiao(84)">84</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt85" type="button" aria-pressed="true" onclick="tijiao(85)">85</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt86" type="button" aria-pressed="true" onclick="tijiao(86)">86</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt87" type="button" aria-pressed="true" onclick="tijiao(87)">87</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt88" type="button" aria-pressed="true" onclick="tijiao(88)">88</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt89" type="button" aria-pressed="true" onclick="tijiao(89)">89</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt90" type="button" aria-pressed="true" onclick="tijiao(90)">90</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt91" type="button" aria-pressed="true" onclick="tijiao(91)">91</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt92" type="button" aria-pressed="true" onclick="tijiao(92)">92</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt93" type="button" aria-pressed="true" onclick="tijiao(93)">93</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt94" type="button" aria-pressed="true" onclick="tijiao(94)">94</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt95" type="button" aria-pressed="true" onclick="tijiao(95)">95</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt96" type="button" aria-pressed="true" onclick="tijiao(96)">96</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt97" type="button" aria-pressed="true" onclick="tijiao(97)">97</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt98" type="button" aria-pressed="true" onclick="tijiao(98)">98</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt99" type="button" aria-pressed="true" onclick="tijiao(99)">99</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-block btn-outline-primary active" id="bt100" type="button" aria-pressed="true" onclick="tijiao(100)">100</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="col-sm-12" >
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">首页</li>
+            <li class="breadcrumb-item">
+                <a href="#">我的</a>
+            </li>
+            <li class="breadcrumb-item active">科目一练习</li>
+            <!-- Breadcrumb Menu-->
+            <li class="breadcrumb-menu d-md-down-none">
+                <div class="btn-group" role="group" aria-label="Button group">
+                    <a class="btn" href="#">
+                        <i class="icon-speech">  论坛</i>
+                    </a>
+                    <a class="btn" href="./">
+                        <i class="icon-graph"></i>  错题集</a>
+                    <a class="btn" href="#">
+                        <i class="icon-settings"></i>  设置</a>
+                </div>
+            </li>
+        </ol>
+        <div data-target="#list-example" style="background: #ffffff">
+            第<input type="text"  id ="timushu"  style="border:none;width:50px; height:20px;" onfocus=this.blur()>题：<br>
+            <div id="Photo">
+                <input type="image" src="./pictures/0.png" width="300" height="300" id="tupian" align="c">
+            </div>
+
+        <br>
+            <textarea type="text"  rows="2" id ="timu"  cols="100" style="resize:none;border: none " onfocus=this.blur()></textarea><br>
+            <div id="wrap">
+                <div id="abcd">
+                    <input type="text" id ="a" style="border:none;width:800px; height:20px;" onfocus=this.blur()><br>
+                    <input type="text" id ="b" style="border:none;width:800px; height:20px;" onfocus=this.blur()><br>
+                    <input type="text" id ="c" style="border:none;width:800px; height:20px;" onfocus=this.blur()><br>
+                    <input type="text" id ="d" style="border:none;width:800px; height:20px;" onfocus=this.blur()><br>
+                    <button class="btn btn-pill btn-info" id="1" type="button" onclick="lingshi('A')">A</button>
+                    <button class="btn btn-pill btn-info" id="2" type="button" onclick="lingshi('B')">B</button>
+                    <button class="btn btn-pill btn-info" id="3" type="button" onclick="lingshi('C')">C</button>
+                    <button class="btn btn-pill btn-info" id="4" type="button" onclick="lingshi('D')">D</button>
+                </div>
+                <div id="yesNo" style="display: none">
+                    <button class="btn btn-pill btn-info" id="right" type="button" onclick="lingshi('1')">√</button>
+                    <button class="btn btn-pill btn-info" id="wrong" type="button" onclick="lingshi('2')">×</button>
+                </div>
+            </div>
+            <input type="text" id ="yn"   style="border:none;width:800px; height:20px;" onfocus=this.blur()><br>
+        <br>
+            <input type="submit" value="上一题" onclick="huanti('0')">
+            <input type="submit" value="提交" onclick="tijiao2()">
+            <input type="submit" value="下一题" onclick="huanti('1')">
+            <button class="btn btn-danger active" aria-pressed="true" data-toggle="modal" data-target="#dangerModal" v-bind:data-rowindex="index" type="button"> 交卷 </button>
+
+        </div>
+        <div class="modal fade show" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+            <div class="modal-dialog modal-danger" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">交卷</h4>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-body">
+                            <p><font style="vertical-align: inherit;">确定是否交卷！</font></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                        <button class="btn btn-danger" type="button" data-dismiss="modal" onclick="jiaojuan()">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer class="footer bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 clearfix footer-col">
+                <a class="navbar-brand" href="#">
+                    <img class="navbar-brand-full" src="科一考试中心.png" width="60" height="60" >
+                    <strong class="h4" style="color: white">科一在线考试</strong>
+
+                </a>
+                <br>
+                <span class="h3" style="color:#4dbd74">要想考驾照，科一需勤练</span>
+                <p>
+                <div class="col-xs-2">
+                    <img src="微信.png" width="25" height="25">
+
+                    <img src="QQ.png" width="25" height="25">
+
+                    <img src="微博.png" width="25" height="25">
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <strong class="col-title">公司</strong>
+                <br>
+                <a href="http://www.baidu.com" target="_blank">关于我们</a><br>
+                <a href="http://www.baidu.com" target="_blank">联系我们</a><br>
+                <a href="http://www.baidu.com" target="_blank">加入我们</a><br>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">合作</div>
+                <a href="http://www.baidu.com" target="_blank">我要投稿</a><br>
+                <a href="http://www.baidu.com" target="_blank">教师合作</a><br>
+                <a href="http://www.baidu.com" target="_blank">高校合作</a><br>
+                <a href="http://www.baidu.com" target="_blank">友情链接</a><br>
+                <a href="http://www.baidu.com" target="_blank">开发者</a><br>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">服务</div>
+                <a href="http://www.baidu.com" target="_blank">企业版</a><br>
+                <a href="http://www.baidu.com" target="_blank">实战训练营</a><br>
+                <a href="http://www.baidu.com" target="_blank">会员服务</a><br>
+                <a href="http://www.baidu.com" target="_blank">实验报告</a><br>
+                <a href="http://www.baidu.com" target="_blank">常见问题</a><br>
+                <a href="http://www.baidu.com" target="_blank">隐私条款</a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">学习路径</div>
+                <a href="http://www.baidu.com" target="_blank">Python学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">Linux学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">大数据学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">Java学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">PHP学习路径</a><br>
+                <a href="http://www.baidu.com" ,="" target="_blank">全部</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center copyright bg-gray-900">
+        <span>Copyright @2018-2018 科目一在线考试</span>
+        <span class="ver-line"> | </span>
+        <a href="http://www.baidu.com/" target="_blank">粤CAO备24681012号</a>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-89338452-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</footer>
+
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+<script>
+
+    var userAnswer = new Array(101); //是否答题，正确？
+    var userAnswer2 = new Array(101);//已答题的答题情况
+    var num = new Array(101);         //存放1-50题目在数据库中的id选择题
+    var them = -1;
+    var users=[ ];  //数据库  选择题数据
+    var sele = [ ]; //数据库  判断题数据
+    var Index2=1;   //记录目前在第几题
+    var Answer='';
+
+    $.ajax({
+        url:"/users",
+        type:"GET",
+        success:function (response) {
+            users = response;
+            for (var i=1;i<num.length;i++) {
+                if (i<=50){ num[i]=Math.ceil(Math.random()*364);}
+                else { num[i]=Math.ceil(Math.random()*299);}
+                userAnswer[i]=0;
+                for (var j=0;j<i;j++){
+                    if (num[i]==num[j]){
+                        them=num[j];
+                        break;
+                    }
+                }
+                if (them==num[i]){
+                    continue;
+                }
+            }
+            if (users[num[Index2]].img!="") { document.getElementById("tupian").src="./"+users[num[Index2]].img;}
+            else {document.getElementById("tupian").src="./pictures/0.png"}
+            document.getElementById("timushu").value=Index2;
+            document.getElementById("timu").value=users[num[1]].subject;
+            document.getElementById("a").value=users[num[1]].a;
+            document.getElementById("b").value=users[num[1]].b;
+            document.getElementById("c").value=users[[1]].c;
+            document.getElementById("d").value=users[[1]].d;
+            var example1 = new Vue({
+                el: '#usersTable',
+                data: {
+                    items: users
+                }
+            });
+            return;
+        }
+    });
+
+    $.ajax({
+        url:"/yeson",
+        type:"GET",
+        success:function (response) {
+            sele = response;
+            var example1 = new Vue({
+                el: '#usersTable',
+                data: {
+                    items: sele
+                }
+            });
+            return;
+        }
+    })
+    function tijiao(index){
+        $("#1").attr("class","btn btn-pill btn-info");
+        $("#2").attr("class","btn btn-pill btn-info");
+        $("#3").attr("class","btn btn-pill btn-info");
+        $("#4").attr("class","btn btn-pill btn-info");
+        $("#right").attr("class","btn btn-pill btn-info");
+        $("#wrong").attr("class","btn btn-pill btn-info");
+        Index2=index;
+        if (Index2<=50){
+            document.getElementById("abcd").style.display="block";
+            document.getElementById("yesNo").style.display = "none";
+        } else {
+            document.getElementById("abcd").style.display = "none";
+            document.getElementById("yesNo").style.display = "block";
+        }
+        if (userAnswer[Index2]==0) {
+            document.getElementById("yn").value="";
+        }
+        else {
+            document.getElementById("yn").value = userAnswer2[Index2]
+        }
+        document.getElementById("timushu").value=Index2;
+        if (Index2<=50){
+            document.getElementById("abcd").style.display="block";
+            if (users[num[Index2]].img!="") { document.getElementById("tupian").src="./"+users[num[Index2]].img;}
+            else {document.getElementById("tupian").src="./pictures/0.png"}
+            document.getElementById("timu").value=users[num[Index2]].subject;
+            document.getElementById("a").value=users[num[Index2]].a;
+            document.getElementById("b").value=users[num[Index2]].b;
+            document.getElementById("c").value=users[num[Index2]].c;
+            document.getElementById("d").value=users[num[Index2]].d;
+        } else {
+            document.getElementById("abcd").style.display="none";
+            if (sele[num[Index2]].pictures!="") { document.getElementById("tupian").src="./"+sele[num[Index2]].pictures;}
+            else {document.getElementById("tupian").src="./pictures/0.png"}
+            document.getElementById("timu").value=sele[num[Index2]].title;
+        }
+    }
+    function lingshi(LsAnswer) {
+
+        if (LsAnswer==='A') {
+            $("#1").attr("class","btn btn-pill btn-success");
+            $("#2").attr("class","btn btn-pill btn-info");
+            $("#3").attr("class","btn btn-pill btn-info");
+            $("#4").attr("class","btn btn-pill btn-info");
+            Answer = LsAnswer;
+        }else if (LsAnswer==='B'){
+            $("#1").attr("class","btn btn-pill btn-info");
+            $("#2").attr("class","btn btn-pill btn-success");
+            $("#3").attr("class","btn btn-pill btn-info");
+            $("#4").attr("class","btn btn-pill btn-info");
+            Answer = LsAnswer;
+        }else if (LsAnswer==='C'){
+            $("#1").attr("class","btn btn-pill btn-info");
+            $("#2").attr("class","btn btn-pill btn-info");
+            $("#3").attr("class","btn btn-pill btn-success");
+            $("#4").attr("class","btn btn-pill btn-info");
+            Answer = LsAnswer;
+        }else if (LsAnswer==='D'){
+            $("#1").attr("class","btn btn-pill btn-info");
+            $("#2").attr("class","btn btn-pill btn-info");
+            $("#3").attr("class","btn btn-pill btn-info");
+            $("#4").attr("class","btn btn-pill btn-success");
+            Answer = LsAnswer;
+        }else if (LsAnswer==='1'){
+            $("#wrong").attr("class","btn btn-pill btn-info");
+            $("#right").attr("class","btn btn-pill btn-success");
+            Answer = LsAnswer;
+        }else if (LsAnswer==='2'){
+            $("#right").attr("class","btn btn-pill btn-info");
+            $("#wrong").attr("class","btn btn-pill btn-success");
+            Answer = LsAnswer;
+        }
+    }
+    function tijiao2(){
+
+        if (userAnswer[Index2]==0) {
+            if (Answer == null) {
+                alert("您未回答！");
+            }else if (Index2<=50) {
+                if (users[num[Index2]].answer===Answer){
+                    document.getElementById("yn").value="回答正确！";
+                    userAnswer[Index2]=2;
+                    userAnswer2[Index2]="回答正确！";
+                }else {
+                    userAnswer[Index2]=1;
+                    userAnswer2[Index2]="回答错误！正确答案为："+users[num[Index2]].answer;
+                    document.getElementById("yn").value="回答错误！正确答案为："+users[num[Index2]].answer;
+                }
+                if (userAnswer[Index2]===1) {
+                    $("#bt"+Index2).attr("class","btn btn-block btn-outline-danger active");
+                }
+                else {
+                    $("#bt"+Index2).attr("class","btn btn-block btn-outline-success active");
+                }
+            }else {
+                if (sele[num[Index2]].answer===Answer){
+                    document.getElementById("yn").value="回答正确！";
+                    userAnswer[Index2]=2;
+                    userAnswer2[Index2]="回答正确！";
+                }else {
+                    userAnswer[Index2]=1;
+                    if (sele[num[Index2]].answer ==='1') {
+                        userAnswer2[Index2]="回答错误！正确答案为：√";
+                    }else if (sele[num[Index2]].answer ==='2') {
+                        userAnswer2[Index2]="回答错误！正确答案为：×";
+                    }
+                    document.getElementById("yn").value=userAnswer2[Index2];
+                }
+                if (userAnswer[Index2]===1) {
+                    $("#bt"+Index2).attr("class","btn btn-block btn-outline-danger active");
+                }
+                else {
+                    $("#bt"+Index2).attr("class","btn btn-block btn-outline-success active");
+                }
+            }
+            Answer=null;
+
+        }else {
+            alert("你已经回答！");
+        }
+    }
+    function jiaojuan() {
+        var right=0,mz=0;
+        for (var i = 0;i<userAnswer.length;i++) {
+            if (userAnswer[i]==0) {
+                mz++
+            }else if (userAnswer[i]==2) {
+                right++;
+            }
+        }
+        alert("对了"+right+"道题，错了"+(100-mz-right)+"道题，没做"+mz+"道题。")
+
+    }
+    function huanti(number){     //换题
+        $("#1").attr("class","btn btn-pill btn-info");
+        $("#2").attr("class","btn btn-pill btn-info");
+        $("#3").attr("class","btn btn-pill btn-info");
+        $("#4").attr("class","btn btn-pill btn-info");
+        $("#right").attr("class","btn btn-pill btn-info");
+        $("#wrong").attr("class","btn btn-pill btn-info");
+        Answer=null;
+        if (number==0){
+            if (Index2==1)
+                return;
+            Index2--;
+            if (userAnswer[Index2]==0) {
+                document.getElementById("yn").value="";
+            }
+            else {
+                document.getElementById("yn").value = userAnswer2[Index2]
+            }
+        } else {
+            if (Index2==100)
+                return;
+            Index2++
+            if (userAnswer[Index2]==0) {
+                document.getElementById("yn").value="";
+            }
+            else {
+                document.getElementById("yn").value = userAnswer2[Index2]
+            }
+        }
+        document.getElementById("timushu").value=Index2;
+        if (Index2<=50){
+            document.getElementById("abcd").style.display="block";
+            document.getElementById("yesNo").style.display = "none";
+            if (users[num[Index2]].img!="") {
+                document.getElementById("tupian").src="./"+users[num[Index2]].img;
+            }
+            else {document.getElementById("tupian").src="./pictures/0.png"}
+            document.getElementById("timu").value=users[num[Index2]].subject;
+            document.getElementById("a").value=users[num[Index2]].a;
+            document.getElementById("b").value=users[num[Index2]].b;
+            document.getElementById("c").value=users[num[Index2]].c;
+            document.getElementById("d").value=users[num[Index2]].d;
+        } else {
+            document.getElementById("abcd").style.display="none";
+            document.getElementById("yesNo").style.display="block";
+            if (sele[num[Index2]].pictures!="") { document.getElementById("tupian").src="./"+sele[num[Index2]].pictures;}
+            else {document.getElementById("tupian").src="./pictures/0.png"}
+            document.getElementById("timu").value=sele[num[Index2]].title;
+        }
+    }
+</script>
+</body>
+</html>
