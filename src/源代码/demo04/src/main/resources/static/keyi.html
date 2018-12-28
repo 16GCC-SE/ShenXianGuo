@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <base href="./"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <meta name="description" content="iCollege学习平台"/>
+    <meta name="author" content="HeWenhai GCC"/>
+    <meta name="keyword" content="iCollege 学习平台"/>
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <title>增删改查-信息管理平台</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet"/>
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet"/>
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet"/>
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet"/>
+</head>
+<body class="app header-fixed  sidebar-close aside-menu-fixed" >
+
+<header class="app-header navbar ">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="mx-3 navbar-brand" href="#">
+            <span class="navbar-brand-full" width="89" height="30">&nbsp;&nbsp;&nbsp;&nbsp;<img
+                    src="img/brand/icollege.svg"
+                    width="30" height="30"
+                    alt="iCollege Logo"/> iCollege学习平台</span>
+
+        <img class="navbar-brand-minimized" src="img/brand/icollege.svg" width="30" height="30" alt="iCollege Logo"/>
+    </a>
+    <!--
+          <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    -->
+
+    <ul class=" mx-2 nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="nav-link" href="dashboard">工作台</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="course">课程管理</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="settings">设置</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-bell"></i>
+                <span class="badge badge-pill badge-danger">5</span>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-list"></i>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-location-pin"></i>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com"/>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-bell-o"></i> Updates
+                    <span class="badge badge-info">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-envelope-o"></i> Messages
+                    <span class="badge badge-success">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-tasks"></i> Tasks
+                    <span class="badge badge-danger">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-comments"></i> Comments
+                    <span class="badge badge-warning">42</span>
+                </a>
+                <div class="dropdown-header text-center">
+                    <strong>Settings</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-wrench"></i> Settings</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-usd"></i> Payments
+                    <span class="badge badge-secondary">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-file"></i> Projects
+                    <span class="badge badge-primary">42</span>
+                </a>
+                <div class="divider"></div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-shield"></i> Lock Account</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+
+<div class="app-body" >
+    <main class="main" >
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">首页</li>
+            <li class="breadcrumb-item active">用户管理</li>
+
+            <!-- Breadcrumb Menu-->
+            <li class="breadcrumb-menu d-md-down-none">
+                <div class="btn-group" role="group" aria-label="Button group">
+                    <!--<a class="btn" href="/user"><i
+                        class="fa fa-user-secret"></i>新增</a>-->
+                </div>
+            </li>
+        </ol>
+        <!--main content-->
+        <div class="container">
+            <div class="animated fadeIn" background="pictures/0.jpg" >
+                <div class="card" id="items-manager">
+                    <div class="card-header">
+                        <i class="icon-people icons"></i> 信息管理
+                        <div class="card-header-actions">
+                            <a class="card-header-action" href="javascript:loadItemModal(-1);">
+                                <i class="icon-plus icons"></i> &nbsp;新增
+                            </a>
+                            <a class="card-header-action " href="javascript:loadDeleteModal(-1);">
+                                <i class="icon-trash icons"></i> &nbsp;删除
+                            </a>
+                        </div>
+                    </div>
+                    <input type="image" src="./pictures/0.jpg" width="100" height="100" id="tupian" align="c">
+                    题目：<input type="text" >
+                    <input type="text" id ="a"><br>
+                    <input type="text" id ="b"><br>
+                    <input type="text" id ="c"><br>
+                    <input type="text" id ="d"><br>
+                    请选择答案：
+                    <input name="Fruit" type="radio" value="a" ><input name="Fruit" type="radio" value="b" ><input name="Fruit" type="radio" value="c" ><input name="Fruit" type="radio" value="d" >
+                    <input type="submit" value="提交" onclick="tijiao()">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside class="aside-menu">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">
+                    <i class="icon-list"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                    <i class="icon-speech"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+                    <i class="icon-settings"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- Tab panes-->
+        <div class="tab-content">
+            <div class="tab-pane active" id="timeline" role="tabpanel">
+                <div class="list-group list-group-accent">
+                    <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">
+                        Today
+                    </div>
+                    <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
+                        <div class="avatar float-right">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                        </div>
+                        <div>Meeting with
+                            <strong>Lucas</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  1 - 3pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-location-pin"></i>  Palo Alto, CA
+                        </small>
+                    </div>
+                    <div class="list-group-item list-group-item-accent-info">
+                        <div class="avatar float-right">
+                            <img class="img-avatar" src="img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                        </div>
+                        <div>Skype with
+                            <strong>Megan</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  4 - 5pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-social-skype"></i>  On-line
+                        </small>
+                    </div>
+                    <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">
+                        Tomorrow
+                    </div>
+                    <div class="list-group-item list-group-item-accent-danger list-group-item-divider">
+                        <div>New UI Project -
+                            <strong>deadline</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  10 - 11pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-home"></i>  creativeLabs HQ
+                        </small>
+                        <div class="avatars-stack mt-2">
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item list-group-item-accent-success list-group-item-divider">
+                        <div>
+                            <strong>#10 Startups.Garden</strong> Meetup
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  1 - 3pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-location-pin"></i>  Palo Alto, CA
+                        </small>
+                    </div>
+                    <div class="list-group-item list-group-item-accent-primary list-group-item-divider">
+                        <div>
+                            <strong>Team meeting</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  4 - 6pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-home"></i>  creativeLabs HQ
+                        </small>
+                        <div class="avatars-stack mt-2">
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/8.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane p-3" id="messages" role="tabpanel">
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+                <hr>
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+                <hr>
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+                <hr>
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+                <hr>
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+            </div>
+            <div class="tab-pane p-3" id="settings" role="tabpanel">
+                <h6>Settings</h6>
+                <div class="aside-options">
+                    <div class="clearfix mt-4">
+                        <small>
+                            <b>Option 1</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                            <input class="switch-input" type="checkbox" checked="">
+                            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </small>
+                    </div>
+                </div>
+                <div class="aside-options">
+                    <div class="clearfix mt-3">
+                        <small>
+                            <b>Option 2</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                            <input class="switch-input" type="checkbox">
+                            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </small>
+                    </div>
+                </div>
+                <div class="aside-options">
+                    <div class="clearfix mt-3">
+                        <small>
+                            <b>Option 3</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                            <input class="switch-input" type="checkbox">
+                            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="aside-options">
+                    <div class="clearfix mt-3">
+                        <small>
+                            <b>Option 4</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                            <input class="switch-input" type="checkbox" checked="">
+                            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <h6>System Utilization</h6>
+                <div class="text-uppercase mb-1 mt-4">
+                    <small>
+                        <b>CPU Usage</b>
+                    </small>
+                </div>
+                <div class="progress progress-xs">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">348 Processes. 1/4 Cores.</small>
+                <div class="text-uppercase mb-1 mt-2">
+                    <small>
+                        <b>Memory Usage</b>
+                    </small>
+                </div>
+                <div class="progress progress-xs">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">11444GB/16384MB</small>
+                <div class="text-uppercase mb-1 mt-2">
+                    <small>
+                        <b>SSD 1 Usage</b>
+                    </small>
+                </div>
+                <div class="progress progress-xs">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">243GB/256GB</small>
+                <div class="text-uppercase mb-1 mt-2">
+                    <small>
+                        <b>SSD 2 Usage</b>
+                    </small>
+                </div>
+                <div class="progress progress-xs">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">25GB/256GB</small>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<footer class="app-footer">
+    <div>
+        <a href="https://coreui.io">iCollege</a>
+        <span>&copy; 2018 GCC.</span>
+    </div>
+    <div class="ml-auto">
+        <span>技术支持</span>
+        <a href="mailto:hewenhai@126.com">@HeWenhai</a>
+    </div>
+</footer>
+
+
+<div class="modal " id="loading-modal" data-backdrop="static" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body font-weight-bold  text-center">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span id="loading-modal-content">任务执行中，请稍等...</span>
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div class="modal " id="confirm-modal" data-backdrop="static" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog  modal-danger" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="confirm-modal-title">危险</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body font-weight-bold" id="confirm-modal-content">
+                记录删除后将无法恢复!确定要删除吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="delete">确定</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div class="modal " id="message-modal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog  modal-danger" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="message-modal-title">信息</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body font-weight-bold" id="message-modal-content">
+                显示信息！
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div class="modal " id="item-modal" data-backdrop="static" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-primary" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-title">新增</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-content">
+                <form class="needs-validation" id="item-form">
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">用户名</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" id="name" v-model="item.name" placeholder="用户名" required>
+                            <small id="nameHelpBlock" class="text-muted">
+                                用户名必须字符开头，只能包含字符和数字
+                            </small>
+                            <div class="invalid-feedback">
+                                用户名不能为空！
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="registerDate" class="col-sm-3 col-form-label">注册时间</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" id="registerDate" v-model="item.gmtCreate" placeholder="注册时间"
+                                   required
+                                   readonly/>
+                            <div class="invalid-feedback">
+                                密码不能为空！
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="role" class="col-sm-3 col-form-label">角色</label>
+                        <div class="col-sm-9">
+                            <select class="custom-select" id="role" v-model="item.role">
+                                <option value="教师">教师</option>
+                                <option value="学生">学生</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="stauts-active" class="col-sm-3 col-form-label">状态</label>
+                        <div class="col-sm-9">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" v-model="item.isEnabled" value="1" id="stauts-active" name="status"
+                                       class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="stauts-active">激活</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" v-model="item.isEnabled" value="0" id="status-forbidden"
+                                       name="status"
+                                       class="custom-control-input">
+                                <label class="custom-control-label" for="status-forbidden">禁用</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="customFile" class="col-sm-3 col-form-label">头像</label>
+                        <div class="col-sm-9">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="save" class="btn btn-primary">保存</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+<script src="vendors/vue/vue.js"></script>
+
+<script>
+
+    var users=[ ];
+    var rowIndex=-1;
+    var Index=1;
+    function tijiao(){
+        Index++;
+        if (users[Index].img!="") { document.getElementById("tupian").src="./"+users[Index].img;}
+        else {document.getElementById("tupian").src="./pictures/0.jpg"}
+        document.getElementById("timu").value=users[Index].subject;
+        document.getElementById("a").value=users[Index].a;
+        document.getElementById("b").value=users[Index].b;
+        document.getElementById("c").value=users[Index].c;
+        document.getElementById("d").value=users[Index].d;
+    }
+    $.ajax({
+        url:"/users",
+        type:"GET",
+        success:function (response) {
+            users = response;
+
+            document.getElementById("timu").value=users[Index].subject;
+            document.getElementById("a").value=users[Index].a;
+            document.getElementById("b").value=users[Index].b;
+            document.getElementById("c").value=users[Index].c;
+            document.getElementById("d").value=users[Index].d;
+            var example1 = new Vue({
+                el: '#usersTable',
+                data: {
+                    items: users
+                }
+            });
+            return;
+        }
+    })
+    // var users=[
+    //     {username:"大毛",registerDatetime:"2016.09.06",role:"管理员",status:"激活"},
+    //     {username:"二毛",registerDatetime:"2017.02.12",role:"管理员",status:"未激活"},
+    //     {username:"小明",registerDatetime:"2017.12.09",role:"管理员",status:"激活"},
+    //     {username:"杰斯",registerDatetime:"2016.09.11",role:"管理员",status:"未激活"},
+    //     {username:"莫小姐",registerDatetime:"2017.12.05",role:"管理员",status:"激活"}
+    // ];
+    // var example1 = new Vue({
+    //     el: '#UsersTable',
+    //     data: {
+    //         items: users
+    //     }
+    // });
+
+
+    $('#primaryModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        rowIndex = button.data('rowindex') // Extract info from data-* attributes
+        var user =users[rowIndex];
+        var modal = $(this)
+        if (rowIndex == undefined) {
+            modal.find('.modal-header #primaryModalLabel').val("新增")
+            modal.find('.modal-body #username').val("");
+            modal.find('.modal-body #registerDatetime').val("");
+            modal.find('.modal-body #role').val("");
+            modal.find('.modal-body #status').val("");
+        }else {
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            modal.find('.modal-body #username').val(user.username);
+            modal.find('.modal-body #registerDatetime').val(user.registerDatetime);
+            modal.find('.modal-body #role').val(user.role);
+            modal.find('.modal-body #status').val(user.status);
+        }
+
+
+    });
+
+    $('#dangerModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        rowIndex = button.data('rowindex') // Extract info from data-* attributes
+        var user =users[rowIndex];
+        return;
+    });
+</script>
+</body>
+</html>

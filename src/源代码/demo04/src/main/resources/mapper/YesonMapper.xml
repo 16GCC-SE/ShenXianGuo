@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gcc.course.springboot.dao.YesonMapper">
+
+    <select id="getAllYeson" resultType="cn.gcc.course.springboot.model.Yeson">
+        select id,subject,answer,img from role
+    </select>
+
+    <!--<select id="findById" parameterType="BigInteger" resultType="cn.gcc.course.springboot.model.Yeson">-->
+        <!--select id,title,answer,pictures from sheet1 WHERE id=#{id}-->
+    <!--</select>-->
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gcc.course.springboot.dao.ChoiceMapper">
+    <select id="getAll" resultType="cn.gcc.course.springboot.model.Choice">
+        select id,subject,A,B,C,D,answer,img from choice
+    </select>
+
+    <select id="findById" parameterType="BigInteger" resultType="cn.gcc.course.springboot.model.Choice">
+        select id,subject,A,B,C,D,answer,img from choice WHERE id=#{id}
+    </select>
+
+    <!--<insert id="insertAuthor">-->
+        <!--insert into Author (id,username,password,email,bio)-->
+        <!--values (#{id},#{username},#{password},#{email},#{bio})-->
+    <!--</insert>-->
+</mapper>

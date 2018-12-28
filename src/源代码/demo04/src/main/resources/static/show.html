@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<header class="app-header navbar" >
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+        <img class="navbar-brand-full" src="科一考试中心.png" width="40" height="40" >
+        <strong>科一在线考试</strong>
+    </a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="nav-link" href="blank.html">考试</a>
+        </li>
+
+        <li class="nav-item px-3">
+            <a class="nav-link" href="knowledge.html">知识</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="mistakes.html">错题</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="communication.html">论坛</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="vip.html">VIP</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="persion.html">个人中心</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-bell"></i>
+                <span class="badge badge-pill badge-danger">5</span>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-list"></i>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-location-pin"></i>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-bell-o"></i> Updates
+                    <span class="badge badge-info">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-envelope-o"></i> Messages
+                    <span class="badge badge-success">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-tasks"></i> Tasks
+                    <span class="badge badge-danger">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-comments"></i> Comments
+                    <span class="badge badge-warning">42</span>
+                </a>
+                <div class="dropdown-header text-center">
+                    <strong>Settings</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-wrench"></i> Settings</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-usd"></i> Payments
+                    <span class="badge badge-secondary">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-file"></i> Projects
+                    <span class="badge badge-primary">42</span>
+                </a>
+                <div class="divider"></div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-shield"></i> Lock Account</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show" >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+<div class="app-body">
+    <main class="col-sm-12" >
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="communication.html" aria-controls="all" role="tab" toggle="tab">讨论区</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <a  aria-controls="course" role="tab" toggle="tab">课程问答</a>
+                </a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a aria-controls="discussion" role="tab" toggle="tab">面对科考压力我应该怎么办？</a>
+            </li>
+
+        </ol>
+        <div data-target="#list-example" style="background: #ffffff">
+            <table style="margin-left:30px">
+                <tr>
+                    <td>
+                        <br><div class="tab-content"> <div class="row">
+                        <div class="col-md-9 layout-body">
+
+                            <div class="content question-detail">
+                                <div class="question-headline">
+                                    <span class="question-title"> <h3>面对科考压力我应该怎么办？</h3></span>
+                                </div>
+                                <div class="question-author">
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="/user/347060" target="_blank">
+                                            <img src="./pictures2/communication1.png">
+                                        </a>
+                                    </div>
+                                    <div class="user-username ">
+                                        <a class="username" href="/user/347060" target="_blank">
+                                            到此一游
+                                        </a>
+                                        <span class="user-level">L4</span>
+                                        <span>23小时前</span>
+                                        <span><a href="/questions/?area_type=course">课程问答</a></span>
+                                        <span class="question-from">来自： <a href="/questions/courses/115">熟悉实验环境 </a></span>
+
+                                        <a href="#sign-modal" data-toggle="modal" data-sign="signin" class="btn btn-primary collectBtn">收藏</a>
+                                    </div>
+                                </div>
+                                <div class="question-content markdown-body">
+                                    <h4>做好充足准备</h4>
+                                    <div class="labreport-detail-like">
+                                        <span class="btn btn-default btn-weiboshare">
+                                            <i class="fa fa-share-alt"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="question-answers">
+                                    <p class="ptilte">全部回复</p>
+                                    <hr/>
+
+
+                                    <div class="answer-item">
+                                        <div class="answer-head">
+                                            <div class="user-avatar ">
+                                                <a class="avatar" href="/user/212008" target="_blank">
+                                                    <img src="./pictures2/communication2.png">
+                                                </a>
+                                                <a class="member-icon" href="/vip" target="_blank">
+                                                    <img src="./pictures2/communication16.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="answer-detail">
+                    <span class="comment-reply">
+                        <div class="user-username ">
+                            <a class="username" href="/user/212008" target="_blank">
+                                米斯特_周
+                            </a>
+                            <span class="user-level">L2</span>
+                        </div>
+                    </span>
+                                            <div>
+                                                <span class="create-time">21小时前</span><hr/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="answer-item">
+                                        <div class="answer-head">
+                                            <div class="user-avatar ">
+                                                <a class="avatar" href="/user/212008" target="_blank">
+                                                    <img src="./pictures2/communication1.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="answer-detail">
+                    <span class="comment-reply">
+    <div class="user-username ">
+        <a class="username" href="/user/212008" target="_blank">
+                  到此一游
+        </a>
+        <span class="user-level">L2</span>
+    </div>
+                    </span>
+                                            <div>
+                                                <span class="create-time">5小时前</span><hr/>
+
+                                                <hr/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="answer-item">
+                                        <div class="answer-head">
+                                            <div class="user-avatar ">
+                                                <a class="avatar" href="/user/162034" target="_blank">
+                                                    <img src="./pictures2/communication3.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="answer-detail">
+                    <span class="comment-reply">
+        <a class="username" href="/user/162034" target="_blank">
+
+                齐川同学促销装
+
+
+        </a>
+        <span class="user-level">L28</span>
+
+                    </span>
+                                            <span class="comment-parent">
+                        回复
+        <a class="username" href="/user/347060" target="_blank">
+                到此一游
+        </a>
+        <span class="user-level">L4</span>
+
+
+                    </span>
+
+                                            <div class="answer-content markdown-body">
+                                                <textarea style="display:none;">同学你好！你可以先通过QQ等工具截图后保存为文件，然后在提问的对话框中点击`图片`按钮上传即可。</textarea>
+                                            </div>
+
+
+
+                                            <div>
+                                                <span class="create-time">11分钟前</span>
+
+                                                <hr/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="your-answer words-ctrl">
+
+                                    <p style="text-align: center;font-weight: 300; font-size: 18px;">
+                                        <a href="#sign-modal" data-toggle="modal" data-sign="signin" data-next="/questions/8641">登录</a>后回复帖子
+                                    </p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 layout-side"align="right">
+
+                            <span class="question-figure">3 回复</span>
+                            <span class="question-figure">17 查看</span>
+                            <div class="side-image">
+                                <a href="/vip" target="_blank">
+                                    <img src="./pictures2/communication17.png">
+                                </a>
+                            </div>
+                            <div class="sidebox side-list related-question"  align="right">
+                                <div class="sidebox-header">
+                                    <h4 class="sidebox-title">相关帖子</h4>
+                                </div>
+                                <div class="sidebox-body side-list-body">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
+                    </td>
+                    <td>
+                        <div id="Photo">
+                            <input type="image" src="./pictures/0.png" width="300" height="300" id="tupian" align="c">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+    </main>
+</div>
+
+<footer class="footer bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 clearfix footer-col">
+                <a class="navbar-brand" href="#">
+                    <img class="navbar-brand-full" src="科一考试中心.png" width="60" height="60" >
+                    <strong class="h4" style="color: white">科一在线考试</strong>
+
+                </a>
+                <br>
+                <span class="h3" style="color:#4dbd74">要想考驾照，科一需勤练</span>
+                <p>
+                <div class="col-xs-2">
+                    <img src="微信.png" width="25" height="25">
+
+                    <img src="QQ.png" width="25" height="25">
+
+                    <img src="微博.png" width="25" height="25">
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <strong class="col-title">公司</strong>
+                <br>
+                <a href="http://www.baidu.com" target="_blank">关于我们</a><br>
+                <a href="http://www.baidu.com" target="_blank">联系我们</a><br>
+                <a href="http://www.baidu.com" target="_blank">加入我们</a><br>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">合作</div>
+                <a href="http://www.baidu.com" target="_blank">我要投稿</a><br>
+                <a href="http://www.baidu.com" target="_blank">教师合作</a><br>
+                <a href="http://www.baidu.com" target="_blank">高校合作</a><br>
+                <a href="http://www.baidu.com" target="_blank">友情链接</a><br>
+                <a href="http://www.baidu.com" target="_blank">开发者</a><br>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">服务</div>
+                <a href="http://www.baidu.com" target="_blank">企业版</a><br>
+                <a href="http://www.baidu.com" target="_blank">实战训练营</a><br>
+                <a href="http://www.baidu.com" target="_blank">会员服务</a><br>
+                <a href="http://www.baidu.com" target="_blank">实验报告</a><br>
+                <a href="http://www.baidu.com" target="_blank">常见问题</a><br>
+                <a href="http://www.baidu.com" target="_blank">隐私条款</a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">学习路径</div>
+                <a href="http://www.baidu.com" target="_blank">Python学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">Linux学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">大数据学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">Java学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">PHP学习路径</a><br>
+                <a href="http://www.baidu.com" ,="" target="_blank">全部</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center copyright bg-gray-900">
+        <span>Copyright @2018-2018 科目一在线考试</span>
+        <span class="ver-line"> | </span>
+        <a href="http://www.baidu.com/" target="_blank">粤CAO备24681012号</a>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-89338452-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</footer>
+<style type="text/css">
+</style>
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+<script>
+</script>
+</body>
+</html>

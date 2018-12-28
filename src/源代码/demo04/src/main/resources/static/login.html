@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs ?ukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="?ukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>科目一考试学习平台</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+<body class="app flex-row align-items-center">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card-group">
+                <div class="card p-4">
+                    <div class="card-body">
+                        <form action="login" method="post" enctype="multipart/form-data" id="loginForm">
+                            <h1>登录</h1>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+
+                    <span class="input-group-text">
+                      <i class="icon-user"></i>
+                    </span>
+                                </div>
+                                <input id="username" class="form-control" name="username" type="text" placeholder="帐户名">
+                            </div>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="icon-lock"></i>
+                    </span>
+                                </div>
+                                <input id="password" class="form-control" name="password" type="password" placeholder="密码">
+                            </div>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button  class="btn btn-primary px-4" type="button"  id="loginBtn"  onclick="loginbtrnclick()">登录</button>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button class="btn btn-link px-0" type="button" >Forgot password?</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                    <div class="card-body text-center">
+                        <div>
+                            <h2>注册</h2>
+                            <p>欢迎来到本网站，专业的题，新鲜的题。做完本网站的题目后确保考试通过率更高.</p>
+                            <button class="btn btn-primary active mt-3" type="button" onclick="location.href='register.html'">现在注册!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+<script>
+    var username =$("#username");
+    var password = $("#password");
+    var msg="";
+    var flag=0;
+    var users=[ ];  //数据库数据
+
+    function loginbtrnclick()
+    {
+
+
+
+        var jusname=$("#username").val();
+
+                $.ajax({
+                    url:"/users",
+                    type:"GET",
+                    success:function (response) {
+                        users = response;
+
+                     //alert(users[0].username+users[1].username);//试一下能不能读取数据库存在的名字
+                        }});
+            for( var i = 0;i<users.length;i++)
+            {
+
+                if(username.val() == "")
+                {
+                    msg="登录名不能为空";
+                    username.focus();
+                    alert(msg);
+                    break;
+                }
+                else if( password.val() == "")
+                {msg="密码不能为空"
+                    password.focus();
+                    alert(msg);
+                    break;
+                }
+                if(users[i].username===username.val())
+                {
+                   // alert("用户在数据库里面");
+
+                  if(users[i].password===password.val())
+                  {
+
+                      //登陆信息正确给予进行跳转
+
+                      if(users[i].role=="管理员")
+                          location.href="crud-bak.html"
+                      else
+                      {
+                          $.ajax({
+                              url : "errors/create",
+                              type : "POST",
+                              contentType: "application/json;charset=utf-8",
+                              data : JSON.stringify({
+                                  'id':0,
+                                  'username':users[i].username
+                              })
+                          });
+                          location.href="blank.html";}
+
+                      break;
+                      location.href="blank.html";
+                      break;
+                  }
+                  else
+                  {
+                      alert("用户密码不正确，请再次输入");
+                      break;
+                  }
+                }
+                if(i==users.length-1)
+                {
+                    alert("不存在用户,请先注册，送大礼");
+                    break;
+                }
+            }
+
+
+
+        }
+
+
+</script>
+
+
+</body>
+</html>

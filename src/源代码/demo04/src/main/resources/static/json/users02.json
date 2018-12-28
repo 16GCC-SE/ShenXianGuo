@@ -1,0 +1,5 @@
+[
+  {"id":4,"name":"张三","registerDate":"2018-08-06 12:00:00","role":"管理员","status":"激活"},
+  {"id":5,"name":"李四","registerDate":"2018-08-07 12:00:00","role":"一般用户","status":"激活"},
+  {"id":6,"name":"黄五","registerDate":"2017-08-06 12:00:00","role":"一般用户","status":"禁用"}
+]

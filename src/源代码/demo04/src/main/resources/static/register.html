@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+<head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+  <meta name="author" content="Łukasz Holeczek">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+  <title>CoreUI Free Bootstrap Admin Template</title>
+  <!-- Icons-->
+  <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+  <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <!-- Main styles for this application-->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+<body class="app flex-row align-items-center">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mx-4">
+        <div class="card-body p-4">
+          <h1>注册</h1>
+          <p class="text-muted">创建帐户</p>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="icon-user"></i>
+                  </span>
+            </div>
+            <input class="form-control" type="text" placeholder="Username" id="username" name="username">
+          </div>
+          <div class="input-group mb-3">
+
+            <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="icon-lock"></i>
+                  </span>
+            </div>
+            <input class="form-control" type="password" placeholder="Password" id="password" name="password">
+          </div>
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="icon-lock"></i>
+                  </span>
+            </div>
+            <input class="form-control" type="password" placeholder="Repeat password" name="Repassword" id="Reppassword">
+          </div>
+
+
+          <button class="btn btn-block btn-success" type="button" onclick="registbtrnclick()">创建</button>
+        </div>
+        <div class="card-footer p-4">
+          <div class="row">
+            <div class="col-6">
+              <button class="btn btn-block btn-facebook" type="button" onclick="location.href='https://im.qq.com/index.shtml#'">
+                <span>QQ</span>
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-block btn-twitter" type="button" onclick="location.href='https://weixin.qq.com/'">
+                <span>微信</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+<script>
+    var username =$("#username");
+    var password = $("#password");
+    var repassword=$("#Reppassword");
+    var msg="";
+    var users=[ ];  //数据库数据
+    var myDate = new Date();
+    var date=myDate.toLocaleDateString();
+     alert(date);
+    function registbtrnclick()
+    {
+
+        var jusername=$("#username").val();
+        var jpassword=$("#password").val();
+        var rid;
+
+        alert(jusername+jpassword);
+        if(username.val() == "")
+        {
+            msg="登录名不能为空";
+            username.focus();
+            alert(msg);
+
+        }
+        else if( password.val() == "")
+        {msg="密码不能为空"
+            password.focus();
+            alert(msg);
+
+        }
+        else if(repassword.val()=="")
+        {
+            msg="请再次输入密码"
+            alert(msg);
+        }
+      else{
+
+            $.ajax({
+                url:"/users",
+                type:"GET",
+                success:function (response) {
+                    users = response;
+                    for( var i = 0;i<users.length;i++)
+                    {
+
+                        if(users[i].username===username.val())
+                        {
+                            alert("用户已经存在，请重新输入");
+                            break;
+                        }
+                        else if(repassword.val()!=password.val())
+                        {
+                            alert("密码不一样，请重新输入！！！")
+                        }
+
+                    }
+                    rid=users.length+1;
+                    alert(rid);
+                    $.ajax({
+                        url : "users/create",
+                        type : "POST",
+                        contentType: "application/json;charset=utf-8",
+                        data : JSON.stringify({id:rid,username:jusername,password:jpassword,registerDatetime:date,role:"学生",status:"禁用"}),
+                        dataType : "text",
+                        success : function(result) {
+                            alert("成功");
+                            location.href="login.html";
+                            if (result == "success") {
+
+                            } else {
+                            }
+                        },
+                        error:function(msg){
+                            $(".notice").html('Error:'+msg);
+                        }
+                    })
+                    //  alert(users[0].username+users[1].username);//试一下能不能读取数据库存在的名字
+                }});
+        }
+
+
+
+    }
+
+
+</script>
+</body>
+</html>

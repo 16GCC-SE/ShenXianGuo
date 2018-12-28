@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<header class="app-header navbar" >
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+        <img class="navbar-brand-full" src="科一考试中心.png" width="40" height="40" >
+        <strong>科一在线考试</strong>
+    </a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="nav-link" href="blank.html">考试</a>
+        </li>
+
+        <li class="nav-item px-3">
+            <a class="nav-link" href="knowledge.html">知识</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="mistakes.html">错题</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="communication.html">论坛</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="vip.html">VIP</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="persion.html">个人中心</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-bell"></i>
+                <span class="badge badge-pill badge-danger">5</span>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-list"></i>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-location-pin"></i>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-bell-o"></i> Updates
+                    <span class="badge badge-info">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-envelope-o"></i> Messages
+                    <span class="badge badge-success">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-tasks"></i> Tasks
+                    <span class="badge badge-danger">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-comments"></i> Comments
+                    <span class="badge badge-warning">42</span>
+                </a>
+                <div class="dropdown-header text-center">
+                    <strong>Settings</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-wrench"></i> Settings</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-usd"></i> Payments
+                    <span class="badge badge-secondary">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-file"></i> Projects
+                    <span class="badge badge-primary">42</span>
+                </a>
+                <div class="divider"></div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-shield"></i> Lock Account</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show" >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+<div class="app-body">
+    <main class="col-sm-12" >
+        <!-- Breadcrumb-->
+
+        <div class="news">
+            <div class="newsbox overflowH">
+                <div class="newsimgbox"><img src="./pictures2/knowledge1.jpg"></div>
+                <div class="newstextbox">
+                    <a href="knowledge_d.html"><h1 class="color">科目一考试顺口溜</h1></a>
+                    <h6>2015/04/01</h6>
+                    <p> 和谐社会，以人为本。 能停就停，能帮就帮，能让就让。只有违法，没有违章。 人行横道不能停车和调头。酒驾和无照，只扣12分。仪表图像看清楚，安全带，减伤害，头枕护颈部。</p>
+                    <p> 高速上，遇雪雾，能见度200米，60码，距离100米。100米，40码，距离50米......</p>
+                </div>
+            </div>
+            <div class="newsbox overflowH">
+                <div class="newsimgbox"><img src="./pictures2/knowledge2.jpg"></div>
+                <div class="newstextbox">
+                    <h1>科目一考试口诀</h1>
+                    <h6>2015/04/24</h6>
+                    <p>1：二吊三撤五醉逃终身；</p>
+                    <p>2：转弯过桥上窄道泥路30km/h；</p>
+                    <p>3：左右观察左超车；</p>
+                    <p>4：交叉转弯窄路隧道桥梁坡道铁路口50米不内不停车；</p>
+                    <p>……</p>
+                </div>
+            </div>
+            <div class="newsbox overflowH">
+                <div class="newsimgbox"><img src="./pictures2/knowledge1.jpg"></div>
+                <div class="newstextbox">
+                    <h1 class="color">科目一考试顺口溜</h1>
+                    <h6>2015/04/01</h6>
+                    <p> 和谐社会，以人为本。 能停就停，能帮就帮，能让就让。只有违法，没有违章。 人行横道不能停车和调头。酒驾和无照，只扣12分。仪表图像看清楚，安全带，减伤害，头枕护颈部。</p>
+                    <p> 高速上，遇雪雾，能见度200米，60码，距离100米。100米，40码，距离50米......</p>
+                </div>
+            </div>
+            <div class="newsbox overflowH">
+                <div class="newsimgbox"><img src="./pictures2/knowledge2.jpg"></div>
+                <div class="newstextbox">
+                    <h1>科目一考试口诀</h1>
+                    <h6>2015/04/24</h6>
+                    <p>1：二吊三撤五醉逃终身；</p>
+                    <p>2：转弯过桥上窄道泥路30km/h；</p>
+                    <p>3：左右观察左超车；</p>
+                    <p>4：交叉转弯窄路隧道桥梁坡道铁路口50米不内不停车；</p>
+                    <p>……</p>
+                </div>
+            </div>
+            <div class="newsbox overflowH">
+                <div class="newsimgbox"><img src="./pictures2/knowledge1.jpg"></div>
+                <div class="newstextbox">
+                    <h1 class="color">科目一考试顺口溜</h1>
+                    <h6>2015/04/01</h6>
+                    <p> 和谐社会，以人为本。 能停就停，能帮就帮，能让就让。只有违法，没有违章。 人行横道不能停车和调头。酒驾和无照，只扣12分。仪表图像看清楚，安全带，减伤害，头枕护颈部。</p>
+                    <p> 高速上，遇雪雾，能见度200米，60码，距离100米。100米，40码，距离50米......</p>
+                </div>
+            </div>
+            <div class="newsbox overflowH">
+                <div class="newsimgbox"><img src="./pictures2/knowledge2.jpg"></div>
+                <div class="newstextbox">
+                    <h1>科目一考试口诀</h1>
+                    <h6>2015/04/24</h6>
+                    <p>1：二吊三撤五醉逃终身；</p>
+                    <p>2：转弯过桥上窄道泥路30km/h；</p>
+                    <p>3：左右观察左超车；</p>
+                    <p>4：交叉转弯窄路隧道桥梁坡道铁路口50米不内不停车；</p>
+                    <p>……</p>
+                </div>
+            </div>
+            <div class="newsbox overflowH">
+                <div class="newsimgbox"><img src="./pictures2/knowledge1.jpg"></div>
+                <div class="newstextbox">
+                    <h1 class="color">科目一考试顺口溜</h1>
+                    <h6>2015/04/01</h6>
+                    <p> 和谐社会，以人为本。 能停就停，能帮就帮，能让就让。只有违法，没有违章。 人行横道不能停车和调头。酒驾和无照，只扣12分。仪表图像看清楚，安全带，减伤害，头枕护颈部。</p>
+                    <p> 高速上，遇雪雾，能见度200米，60码，距离100米。100米，40码，距离50米......</p>
+                </div>
+            </div>
+            <div class="newsbox overflowH">
+                <div class="newsimgbox"><img src="./pictures2/knowledge2.jpg"></div>
+                <div class="newstextbox">
+                    <h1>科目一考试口诀</h1>
+                    <h6>2015/04/24</h6>
+                    <p>1：二吊三撤五醉逃终身；</p>
+                    <p>2：转弯过桥上窄道泥路30km/h；</p>
+                    <p>3：左右观察左超车；</p>
+                    <p>4：交叉转弯窄路隧道桥梁坡道铁路口50米不内不停车；</p>
+                    <p>……</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paperbox overflowH">
+                <div class="paperline"></div>
+                <div class="papermain overflowH">
+                    <h4>
+                        <a href="knowledge.html" class="papertop">上一页</a>
+                        <a href="knowledge.html" class="papercenter1">1</a>
+                        <a href="knowledge.html" class="papercenter">2</a>
+                        <a href="knowledge.html" class="papercenter">3</a>
+                        <a href="knowledge.html" class="papercenter">4</a>
+                        <a href="knowledge.html" class="papercenter">…</a>
+                        <a href="knowledge.html" class="papercenter">8</a>
+                        <a href="knowledge.html" class="papertop">下一页</a>
+                    </h4>
+                </div>
+                <div class="paperline"></div>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<footer class="footer bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 clearfix footer-col">
+                <a class="navbar-brand" href="#">
+                    <img class="navbar-brand-full" src="科一考试中心.png" width="60" height="60" >
+                    <strong class="h4" style="color: white">科一在线考试</strong>
+
+                </a>
+                <br>
+                <span class="h3" style="color:#4dbd74">要想考驾照，科一需勤练</span>
+                <p>
+                <div class="col-xs-2">
+                    <img src="微信.png" width="25" height="25">
+
+                    <img src="QQ.png" width="25" height="25">
+
+                    <img src="微博.png" width="25" height="25">
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <strong class="col-title">公司</strong>
+                <br>
+                <a href="http://www.baidu.com" target="_blank">关于我们</a><br>
+                <a href="http://www.baidu.com" target="_blank">联系我们</a><br>
+                <a href="http://www.baidu.com" target="_blank">加入我们</a><br>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">合作</div>
+                <a href="http://www.baidu.com" target="_blank">我要投稿</a><br>
+                <a href="http://www.baidu.com" target="_blank">教师合作</a><br>
+                <a href="http://www.baidu.com" target="_blank">高校合作</a><br>
+                <a href="http://www.baidu.com" target="_blank">友情链接</a><br>
+                <a href="http://www.baidu.com" target="_blank">开发者</a><br>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">服务</div>
+                <a href="http://www.baidu.com" target="_blank">企业版</a><br>
+                <a href="http://www.baidu.com" target="_blank">实战训练营</a><br>
+                <a href="http://www.baidu.com" target="_blank">会员服务</a><br>
+                <a href="http://www.baidu.com" target="_blank">实验报告</a><br>
+                <a href="http://www.baidu.com" target="_blank">常见问题</a><br>
+                <a href="http://www.baidu.com" target="_blank">隐私条款</a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">学习路径</div>
+                <a href="http://www.baidu.com" target="_blank">Python学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">Linux学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">大数据学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">Java学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">PHP学习路径</a><br>
+                <a href="http://www.baidu.com" ,="" target="_blank">全部</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center copyright bg-gray-900">
+        <span>Copyright @2018-2018 科目一在线考试</span>
+        <span class="ver-line"> | </span>
+        <a href="http://www.baidu.com/" target="_blank">粤CAO备24681012号</a>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-89338452-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</footer>
+<style type="text/css">
+</style>
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+<script>
+</script>
+</body>
+</html>

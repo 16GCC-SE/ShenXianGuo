@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gcc.course.springboot.dao.UserMapper">
+    <select id="getAll" resultType="cn.gcc.course.springboot.model.User">
+        select id,username,password,register_datetime,role,status from user
+    </select>
+
+    <select id="findById" parameterType="BigInteger" resultType="cn.gcc.course.springboot.model.User">
+        select id,username,password,register_datetime,role,status from user WHERE id=#{id}
+    </select>
+
+    <insert id="insertAuthor">
+        insert into Author (id,username,password,email,bio)
+        values (#{id},#{username},#{password},#{email},#{bio})
+    </insert>
+    <insert id="insertuser">
+        insert into user (id,username,password,register_datetime,role,status )
+        values (#{99},#{username},#{password},#{99},#{99})
+    </insert>
+</mapper>

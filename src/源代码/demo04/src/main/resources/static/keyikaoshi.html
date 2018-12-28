@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed ">
+<header class="app-header navbar">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+        <i class="fa fa-graduation-cap" style="color: #00aced">iCollege系统</i>
+    </a>
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="nav-link" href="#">工作台</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="#">课程管理</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="#">设置</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-bell"></i>
+                <span class="badge badge-pill badge-danger">5</span>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-list"></i>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-location-pin"></i>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-bell-o"></i> Updates
+                    <span class="badge badge-info">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-envelope-o"></i> Messages
+                    <span class="badge badge-success">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-tasks"></i> Tasks
+                    <span class="badge badge-danger">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-comments"></i> Comments
+                    <span class="badge badge-warning">42</span>
+                </a>
+                <div class="dropdown-header text-center">
+                    <strong>Settings</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-wrench"></i> Settings</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-usd"></i> Payments
+                    <span class="badge badge-secondary">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-file"></i> Projects
+                    <span class="badge badge-primary">42</span>
+                </a>
+                <div class="divider"></div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-shield"></i> Lock Account</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+<div class="app-body">
+    <main class="main">
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">首页</li>
+            <li class="breadcrumb-item">
+                <a href="#">用户名</a>
+            </li>
+            <!-- Breadcrumb Menu-->
+        </ol>
+        <div class="container-fluid">
+            <div class="animated fadeIn">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="icons cui-people"></i>信息管理
+                        <div class="card-header-actions">
+                            <button class="btn btn-ghost-primary" data-toggle="modal" data-target="#primaryModal" v-bind:data-rowindex="index" type="button"><i class="icon-plus" > 新增</i></button>
+                            <button class="btn btn-ghost-danger" type="button"><i class="icon-trash"> 删除</i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-responsive-sm table-bordered" id="UsersTable">
+                            <thead>
+                            <tr>
+                                <th>
+                                    <div class="form-check checkbox">
+                                        <input class="form-check-input" id="check0" type="checkbox" value="">
+                                        <label class="form-check-label" for="check0"></label>
+                                    </div>
+                                </th>
+                                <th>用户名</th>
+                                <th>注册时间</th>
+                                <th>角色</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tr v-for="(item,index) in items">
+                                <th>
+                                    <div class="form-check checkbox">
+                                        <input class="form-check-input" id="check1" type="checkbox" value="">
+                                        <label class="form-check-label" for="check1">{{index}}</label>
+                                    </div>
+                                </th>
+                                <td>{{ item.username }}</td>
+                                <td>{{ item.registerDatetime }}</td>
+                                <td>{{ item.role }}</td>
+                                <td>
+                                    <span class="badge badge-success">{{ item.status }}</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-primary active" aria-pressed="true" data-toggle="modal" data-target="#primaryModal" v-bind:data-rowindex="index" type="button"><i
+                                            class="fa fa-pencil-square-o">编辑</i></button>
+                                    <button class="btn btn-danger active" aria-pressed="true" data-toggle="modal" data-target="#dangerModal" v-bind:data-rowindex="index" type="button"><i class="fa fa-times">删除</i></button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" aria-label="Previous" href="#">
+                                        <span aria-hidden="true">«</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" aria-label="Next" href="#">
+                                        <span aria-hidden="true">»</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                                <div class="btn-group dropup">
+                                    <button class="btn btn-secondary" type="button">10/页</button>
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu" x-placement="top-start"
+                                         style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(101px, -2px, 0px);">
+                                        <a class="dropdown-item" href="#">1</a>
+                                        <a class="dropdown-item" href="#">2</a>
+                                        <a class="dropdown-item" href="#">3</a>
+                                        <a class="dropdown-item" href="#">4</a>
+                                        <a class="dropdown-item" href="#">5</a>
+                                        <a class="dropdown-item" href="#">6</a>
+                                        <a class="dropdown-item" href="#">7</a>
+                                        <a class="dropdown-item" href="#">8</a>
+                                        <a class="dropdown-item" href="#">9</a>
+                                        <a class="dropdown-item" href="#">10</a>
+                                    </div>
+                                </div>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="primaryModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="primaryModalLabel">编辑信息</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="post" class="needs-validation" id="modalForm">
+                            <div class="form-group">
+                                <label for="username">用户名</label>
+                                <input class="form-control" id="username" type="text" name="username" placeholder="用户名.." required>
+                                <div class="invalid-feedback">
+                                    用户名不能为空！
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerDatetime">注册时间</label>
+                                <input class="form-control" id="registerDatetime" type="text" name="registerDatetime" placeholder="注册时间.." required>
+                                <div class="invalid-feedback">
+                                    注册时间不能为空！
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">角色</label>
+                                <input class="form-control" id="role" type="text" name="ote" placeholder="角色.." required>
+                                <div class="invalid-feedback">
+                                    角色不能为空！或角色输入有误！
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="status">状态</label>
+                                <input class="form-control" id="status" type="text" name="status" placeholder="状态.." required>
+                                <div class="invalid-feedback">
+                                    状态不能为空！或状态输入有误！
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button type="button" onclick="save()" class="btn btn-primary">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade show" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+            <div class="modal-dialog modal-danger" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">删除</h4>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-body">
+                            <p><font style="vertical-align: inherit;">确定是否删除！</font></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                        <button class="btn btn-danger" type="button" data-dismiss="modal" onclick="del()">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside class="aside-menu">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">
+                    <i class="icon-list"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                    <i class="icon-speech"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+                    <i class="icon-settings"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- Tab panes-->
+        <div class="tab-content">
+            <div class="tab-pane active" id="timeline" role="tabpanel">
+                <div class="list-group list-group-accent">
+                    <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">
+                        Today
+                    </div>
+                    <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
+                        <div class="avatar float-right">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                        </div>
+                        <div>Meeting with
+                            <strong>Lucas</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  1 - 3pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-location-pin"></i>  Palo Alto, CA
+                        </small>
+                    </div>
+                    <div class="list-group-item list-group-item-accent-info">
+                        <div class="avatar float-right">
+                            <img class="img-avatar" src="img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                        </div>
+                        <div>Skype with
+                            <strong>Megan</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  4 - 5pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-social-skype"></i>  On-line
+                        </small>
+                    </div>
+                    <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">
+                        Tomorrow
+                    </div>
+                    <div class="list-group-item list-group-item-accent-danger list-group-item-divider">
+                        <div>New UI Project -
+                            <strong>deadline</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  10 - 11pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-home"></i>  creativeLabs HQ
+                        </small>
+                        <div class="avatars-stack mt-2">
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item list-group-item-accent-success list-group-item-divider">
+                        <div>
+                            <strong>#10 Startups.Garden</strong> Meetup
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  1 - 3pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-location-pin"></i>  Palo Alto, CA
+                        </small>
+                    </div>
+                    <div class="list-group-item list-group-item-accent-primary list-group-item-divider">
+                        <div>
+                            <strong>Team meeting</strong>
+                        </div>
+                        <small class="text-muted mr-3">
+                            <i class="icon-calendar"></i>  4 - 6pm
+                        </small>
+                        <small class="text-muted">
+                            <i class="icon-home"></i>  creativeLabs HQ
+                        </small>
+                        <div class="avatars-stack mt-2">
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                            <div class="avatar avatar-xs">
+                                <img class="img-avatar" src="img/avatars/8.jpg" alt="admin@bootstrapmaster.com">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane p-3" id="messages" role="tabpanel">
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+                <hr>
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+                <hr>
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+                <hr>
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+                <hr>
+                <div class="message">
+                    <div class="py-3 pb-5 mr-3 float-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+                            <span class="avatar-status badge-success"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lukasz Holeczek</small>
+                        <small class="text-muted float-right mt-1">1:52 PM</small>
+                    </div>
+                    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt...
+                    </small>
+                </div>
+            </div>
+            <div class="tab-pane p-3" id="settings" role="tabpanel">
+                <h6>Settings</h6>
+                <div class="aside-options">
+                    <div class="clearfix mt-4">
+                        <small>
+                            <b>Option 1</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                            <input class="switch-input" type="checkbox" checked="">
+                            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </small>
+                    </div>
+                </div>
+                <div class="aside-options">
+                    <div class="clearfix mt-3">
+                        <small>
+                            <b>Option 2</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                            <input class="switch-input" type="checkbox">
+                            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </small>
+                    </div>
+                </div>
+                <div class="aside-options">
+                    <div class="clearfix mt-3">
+                        <small>
+                            <b>Option 3</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                            <input class="switch-input" type="checkbox">
+                            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="aside-options">
+                    <div class="clearfix mt-3">
+                        <small>
+                            <b>Option 4</b>
+                        </small>
+                        <label class="switch switch-label switch-pill switch-success switch-sm float-right">
+                            <input class="switch-input" type="checkbox" checked="">
+                            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <h6>System Utilization</h6>
+                <div class="text-uppercase mb-1 mt-4">
+                    <small>
+                        <b>CPU Usage</b>
+                    </small>
+                </div>
+                <div class="progress progress-xs">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">348 Processes. 1/4 Cores.</small>
+                <div class="text-uppercase mb-1 mt-2">
+                    <small>
+                        <b>Memory Usage</b>
+                    </small>
+                </div>
+                <div class="progress progress-xs">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">11444GB/16384MB</small>
+                <div class="text-uppercase mb-1 mt-2">
+                    <small>
+                        <b>SSD 1 Usage</b>
+                    </small>
+                </div>
+                <div class="progress progress-xs">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">243GB/256GB</small>
+                <div class="text-uppercase mb-1 mt-2">
+                    <small>
+                        <b>SSD 2 Usage</b>
+                    </small>
+                </div>
+                <div class="progress progress-xs">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">25GB/256GB</small>
+            </div>
+        </div>
+    </aside>
+</div>
+<footer class="app-footer">
+    <div>
+        <a href="https://coreui.io">CoreUI</a>
+        <span>&copy; 2018 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+        <span>Powered by</span>
+        <a href="https://coreui.io">CoreUI</a>
+    </div>
+</footer>
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+<script src="vendors/chart.js/js/Chart.min.js"></script>
+<script src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js"></script>
+<script src="js/widgets.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+    var rowIndex = -1;
+    var users=[
+        {username:"大毛",registerDatetime:"2016.09.06",role:"管理员",status:"激活"},
+        {username:"二毛",registerDatetime:"2017.02.12",role:"管理员",status:"未激活"},
+        {username:"小明",registerDatetime:"2017.12.09",role:"管理员",status:"激活"},
+        {username:"杰斯",registerDatetime:"2016.09.11",role:"管理员",status:"未激活"},
+        {username:"莫小姐",registerDatetime:"2017.12.05",role:"管理员",status:"激活"}
+    ];
+    var example1 = new Vue({
+        el: '#UsersTable',
+        data: {
+            items: users
+        }
+    });
+
+    $('#primaryModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        rowIndex = button.data('rowindex') // Extract info from data-* attributes
+        var user =users[rowIndex];
+        var modal = $(this)
+        if (rowIndex == undefined) {
+            modal.find('.modal-header #primaryModalLabel').val("新增")
+            modal.find('.modal-body #username').val("");
+            modal.find('.modal-body #registerDatetime').val("");
+            modal.find('.modal-body #role').val("");
+            modal.find('.modal-body #status').val("");
+        }else {
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            modal.find('.modal-body #username').val(user.username);
+            modal.find('.modal-body #registerDatetime').val(user.registerDatetime);
+            modal.find('.modal-body #role').val(user.role);
+            modal.find('.modal-body #status').val(user.status);
+        }
+
+
+    });
+
+    $('#dangerModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        rowIndex = button.data('rowindex') // Extract info from data-* attributes
+        var user =users[rowIndex];
+        return;
+    });
+
+    function save(){
+        var form = document.getElementById('modalForm');
+        if (form.checkValidity()===true) {
+            var username = $('#username').val();
+            var registerDatetime = $('#registerDatetime').val();
+            var role = $('#role').val();
+            var status = $('#status').val();
+            if(role !== '管理员'){
+                role = null;
+                $('.modal-body #role').val("");
+            }
+            if(status != '未激活' || status != '激活'){
+                status = null;
+                $('.modal-body #status').val("");
+            }
+            if (username != null && registerDatetime != null && role != null && status != null) {
+                if (rowIndex == undefined) {
+                    users.unshift({username: username, registerDatetime: registerDatetime, role: role, status: status});
+                } else {
+                    users[rowIndex].username = username;
+                    users[rowIndex].registerDatetime = registerDatetime;
+                    users[rowIndex].role = role;
+                    users[rowIndex].status = status;
+                    $('#primaryModal').modal('hide');
+                }
+            }
+        }
+        form.classList.add('was-validated');
+    }
+
+    function del(){
+        users.splice(rowIndex,1);
+        $('#dangerModal').model('hide');
+    }
+</script>
+
+</body>
+</html>

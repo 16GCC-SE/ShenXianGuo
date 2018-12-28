@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<header class="app-header navbar" >
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+        <img class="navbar-brand-full" src="科一考试中心.png" width="40" height="40" >
+        <strong>科一在线考试</strong>
+    </a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="nav-link" href="blank.html">考试</a>
+        </li>
+
+        <li class="nav-item px-3">
+            <a class="nav-link" href="knowledge.html">知识</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="mistakes.html">错题</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="communication.html">论坛</a>
+        </li>
+        <li class="nav-item px-3" >
+            <a class="nav-link" href="vip.html">VIP</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="persion.html">个人中心</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-bell"></i>
+                <span class="badge badge-pill badge-danger">5</span>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-list"></i>
+            </a>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#">
+                <i class="icon-location-pin"></i>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-bell-o"></i> Updates
+                    <span class="badge badge-info">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-envelope-o"></i> Messages
+                    <span class="badge badge-success">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-tasks"></i> Tasks
+                    <span class="badge badge-danger">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-comments"></i> Comments
+                    <span class="badge badge-warning">42</span>
+                </a>
+                <div class="dropdown-header text-center">
+                    <strong>Settings</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-wrench"></i> Settings</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-usd"></i> Payments
+                    <span class="badge badge-secondary">42</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-file"></i> Projects
+                    <span class="badge badge-primary">42</span>
+                </a>
+                <div class="divider"></div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-shield"></i> Lock Account</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show" >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+<div class="app-body">
+    <main class="col-sm-12" >
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="communication.html" aria-controls="all" role="tab" toggle="tab">全部</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <a href="communication.html" aria-controls="course" role="tab" toggle="tab">课程问答</a>
+                </a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a href="communication.html" aria-controls="discussion" role="tab" toggle="tab">交流讨论</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a href="communication.html" aria-controls="sharing" role="tab" toggle="tab">技术分享</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a href="communication.html" aria-controls="labreport" role="tab" toggle="tab">实验报告</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a href="communication.html" aria-controls="notice" role="tab" toggle="tab">站内公告</a>
+            </li>
+            <!-- Breadcrumb Menu-->
+            <li class="breadcrumb-menu d-md-down-none">
+                <div class="btn-group" role="group" aria-label="Button group">
+                    <a class="active" >最新</a>
+
+                    <a   >最热</a>
+
+                    <a >未回复</a>
+                </div>
+            </li>
+        </ol>
+        <div class="content">
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active">
+
+                    <ol class="question-items">
+
+
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication1.png">
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            誓言
+
+                                        </a>
+                                        <span class="user-level">L14</span><br>
+
+                                        <span class="question-item-date">3小时前</span>
+
+                                        <a>回复</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            芃逆明
+
+
+                                        </a>
+                                        <span class="user-level">L38</span>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+
+                                        <img src="./pictures2/communication15.png">
+
+                                        <a class="question-item-title" href="show.html" target="_blank"> 科考俱乐部成立，欢迎100楼的你加入！</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication2.png">
+
+                                        </a>
+                                        <a>
+                                            <img href="vip.html" src="./pictures2/communication16.png">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            石头
+
+                                        </a>
+                                        <span class="user-level">L14</span><br>
+
+                                        <span class="question-item-date">3小时前</span>
+
+                                        <a>回复</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            誓言
+
+
+                                        </a>
+                                        <span class="user-level">L38</span>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+
+                                        <img src="./pictures2/communication15.png">
+
+                                        <a class="question-item-title" href="show.html" target="_blank"> 面对科考压力我应该怎么办?</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication3.png">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            司机
+                                        </a>
+                                        <span class="user-level">L56</span><br>
+
+                                        <span class="question-item-date">4小时前</span>
+
+                                        <a>来自</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            科考平台
+
+
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 老是做错怎么办？</a>
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication4.jpg">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            三尅
+                                        </a>
+                                        <span class="user-level">L56</span><br>
+
+                                        <span class="question-item-date">5分钟前</span>
+
+                                        <a>来自</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+                                            基础入门
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 科目二怎么过？</a>
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication5.jpg">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            星飞
+                                        </a>
+                                        <span class="user-level">L56</span><br>
+
+                                        <span class="question-item-date">5分钟前</span>
+
+                                        <a>来自</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+                                            基础入门
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 科目三怎么过？</a>
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication7.jpg">
+
+                                        </a>
+                                        <a>
+                                            <img href="vip.html" src="./pictures2/communication16.png">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            心神
+
+                                        </a>
+                                        <span class="user-level">L14</span><br>
+
+                                        <span class="question-item-date">22分钟时前</span>
+
+                                        <a>来自</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            科考服务
+
+
+                                        </a>
+                                        <span class="user-level">L38</span>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 科目四没准备好怎么办？</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication7.jpg">
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            暗号
+
+                                        </a>
+                                        <span class="user-level">L4</span><br>
+
+                                        <span class="question-item-date">34分钟前</span>
+
+                                        <a>回复</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            大夫
+
+
+                                        </a>
+                                        <span class="user-level">L14</span>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 科目二有没有速成法？</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication9.png">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            咸鱼
+
+                                        </a>
+                                        <span class="user-level">L7</span><br>
+
+                                        <span class="question-item-date">47分钟前</span>
+
+                                        <a>来自</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            入门教程
+
+
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 科目四有没有速成法？</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication10.png">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            验流
+
+                                        </a>
+                                        <span class="user-level">L1</span><br>
+
+                                        <span class="question-item-date">47分钟前</span>
+
+                                        <a>来自</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            新手指南
+
+
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 科目四怎么分出来的？</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication11.jpg">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            打口
+
+                                        </a>
+                                        <span class="user-level">L5</span><br>
+
+                                        <span class="question-item-date">47分钟前</span>
+
+                                        <a>来自</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            科考框架
+
+
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 科目一有没有速成法？</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication12.jpg">
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            楼23211
+
+                                        </a>
+                                        <span class="user-level">L5</span><br>
+
+                                        <span class="question-item-date">34分钟前</span>
+
+                                        <a>回复</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            狂草
+
+
+                                        </a>
+                                        <span class="user-level">L11</span>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 考试了，没睡好，怎么办？</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication13.jpg">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            凌岸
+
+                                        </a>
+                                        <span class="user-level">L55</span><br>
+
+                                        <span class="question-item-date">1小时前</span>
+
+                                        <a>来自</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            基础课程
+
+
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank"> 考试心情平复大法。</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication13.png">
+
+                                        </a>
+                                        <a>
+                                            <img href="vip.html" src="./pictures2/communication16.png">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            逆明
+
+                                        </a>
+                                        <span class="user-level">L14</span><br>
+
+                                        <span class="question-item-date">22分钟前</span>
+
+                                        <a>来自</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            科考服务
+
+
+                                        </a>
+                                        <span class="user-level">L38</span>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank">科目二的两种顺序。</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+                        <li class="question-item">
+                            <div class="col-md-10">
+                                <div class="col-sm-2 question-item-author">
+
+                                    <div class="user-avatar ">
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            <img src="./pictures2/communication14.jpg">
+
+                                        </a>
+                                        <a>
+                                            <img href="vip.html" src="./pictures2/communication16.png">
+
+                                        </a>
+                                        <a class="avatar" href="../user/13/study.html" target="_blank">
+                                            不锈
+
+                                        </a>
+                                        <span class="user-level">L14</span><br>
+
+                                        <span class="question-item-date">22分钟前</span>
+
+                                        <a>最后回复</a>
+                                        <a class="username" href="/user/256544" target="_blank">
+
+                                            摇落
+
+
+                                        </a>
+                                        <span class="user-level">L38</span>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4>
+                                        <a class="question-item-title" href="show.html" target="_blank">科目二的两种顺序。</a>
+
+                                    </h4>
+                                    <div class="question-item-summary">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li><hr>
+
+                    </ol>
+
+
+
+
+                    <nav class="pagination-container">
+                        <ul class="pagination">
+
+                            <h4>
+                                <a href="communication.html" aria-label="Previous">
+                                    <span aria-hidden="true">上一页</span>
+                                </a>
+
+                                <a href="communication.html">1</a>
+
+                                <a href="communication.html">2</a>
+
+                                <a href="communication.html">3</a>
+
+                                <a href="communication.html">4</a>
+
+                                <a href="communication.html">5</a>
+
+                                <a href='communication.html'>...</a>
+
+
+
+                                <a href="communication.html">8</a>
+
+                                <a href="communication.html">9</a>
+
+
+
+
+                                <a aria-label="Next" href="communication.html">
+                                    <span aria-hidden="true">下一页</span>
+                                </a>
+                            </h4>
+
+
+                        </ul>
+                    </nav>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<footer class="footer bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 clearfix footer-col">
+                <a class="navbar-brand" href="#">
+                    <img class="navbar-brand-full" src="科一考试中心.png" width="60" height="60" >
+                    <strong class="h4" style="color: white">科一在线考试</strong>
+
+                </a>
+                <br>
+                <span class="h3" style="color:#4dbd74">要想考驾照，科一需勤练</span>
+                <p>
+                <div class="col-xs-2">
+                    <img src="微信.png" width="25" height="25">
+
+                    <img src="QQ.png" width="25" height="25">
+
+                    <img src="微博.png" width="25" height="25">
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <strong class="col-title">公司</strong>
+                <br>
+                <a href="http://www.baidu.com" target="_blank">关于我们</a><br>
+                <a href="http://www.baidu.com" target="_blank">联系我们</a><br>
+                <a href="http://www.baidu.com" target="_blank">加入我们</a><br>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">合作</div>
+                <a href="http://www.baidu.com" target="_blank">我要投稿</a><br>
+                <a href="http://www.baidu.com" target="_blank">教师合作</a><br>
+                <a href="http://www.baidu.com" target="_blank">高校合作</a><br>
+                <a href="http://www.baidu.com" target="_blank">友情链接</a><br>
+                <a href="http://www.baidu.com" target="_blank">开发者</a><br>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">服务</div>
+                <a href="http://www.baidu.com" target="_blank">企业版</a><br>
+                <a href="http://www.baidu.com" target="_blank">实战训练营</a><br>
+                <a href="http://www.baidu.com" target="_blank">会员服务</a><br>
+                <a href="http://www.baidu.com" target="_blank">实验报告</a><br>
+                <a href="http://www.baidu.com" target="_blank">常见问题</a><br>
+                <a href="http://www.baidu.com" target="_blank">隐私条款</a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 footer-col">
+                <br>
+                <div class="col-title">学习路径</div>
+                <a href="http://www.baidu.com" target="_blank">Python学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">Linux学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">大数据学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">Java学习路径</a><br>
+                <a href="http://www.baidu.com" target="_blank">PHP学习路径</a><br>
+                <a href="http://www.baidu.com" ,="" target="_blank">全部</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center copyright bg-gray-900">
+        <span>Copyright @2018-2018 科目一在线考试</span>
+        <span class="ver-line"> | </span>
+        <a href="http://www.baidu.com/" target="_blank">粤CAO备24681012号</a>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-89338452-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</footer>
+<style type="text/css">
+</style>
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+<script>
+</script>
+</body>
+</html>
